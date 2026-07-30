@@ -261,21 +261,21 @@ h3 {
 h1 {
   max-width: 900px;
   margin-bottom: 24px;
-  font-size: clamp(42px, 5.8vw, 86px);
+  font-size: clamp(40px, 5.5vw, 80px);
   font-weight: 800;
   line-height: 0.92;
 }
 
 h2 {
   margin-bottom: 0;
-  font-size: clamp(34px, 5vw, 72px);
+  font-size: clamp(32px, 4.7vw, 66px);
   font-weight: 600;
   line-height: 1;
 }
 
 h3 {
   margin-bottom: 12px;
-  font-size: clamp(25px, 3vw, 42px);
+  font-size: clamp(24px, 2.8vw, 38px);
   font-weight: 600;
   line-height: 1.05;
 }
@@ -452,7 +452,7 @@ h3 {
   margin: 0 auto;
 }
 
-.image-band div {
+.image-band > div {
   position: relative;
   min-height: 190px;
   overflow: hidden;
@@ -483,28 +483,40 @@ h3 {
   color: currentColor;
 }
 
-.band-goalbuddy {
+.band-opportunity {
   color: var(--cyan-dark);
   background: linear-gradient(135deg, var(--cyan-soft), var(--white));
 }
 
-.band-waddl {
+.band-learning {
   color: var(--green);
   background: linear-gradient(135deg, var(--green-soft), var(--white));
 }
 
-.band-outloud {
+.band-connection {
   color: var(--terracotta-dark);
   background: linear-gradient(135deg, var(--terracotta-soft), var(--white));
 }
 
-.image-band span {
+.image-band .band-copy {
   position: absolute;
   left: 24px;
-  bottom: 22px;
+  bottom: 20px;
+  right: 24px;
+}
+
+.image-band span {
+  display: block;
   color: var(--ink);
   font-size: 21px;
   font-weight: 800;
+}
+
+.band-tagline {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 600;
 }
 
 .split-section,
@@ -594,11 +606,36 @@ h3 {
   text-transform: uppercase;
 }
 
-.flow-strip i {
+.flow-strip svg {
   width: 16px;
-  height: 1px;
-  background: var(--green);
-  opacity: 0.5;
+  height: 16px;
+  color: var(--green);
+  opacity: 0.55;
+}
+
+.store-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.store-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: var(--white);
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.store-badge svg {
+  width: 16px;
+  height: 16px;
 }
 
 .venture-copy {
@@ -757,16 +794,56 @@ h3 {
   border-top: 1px solid var(--line);
 }
 
-.company-detail {
-  margin-top: 20px;
+.contact-card {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 32px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--white);
+  box-shadow: 0 22px 60px rgba(83, 47, 44, 0.1);
+}
+
+.contact-icon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--terracotta-soft);
+  color: var(--terracotta-dark);
+}
+
+.contact-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.contact-card-label {
+  margin: 0 0 6px;
+  font-family: var(--mono);
+  font-size: 12px;
   font-weight: 700;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.company-detail {
+  margin: 0;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--muted);
 }
 
 .contact-link {
-  justify-self: end;
   max-width: 100%;
   background: var(--white);
   color: var(--green);
+  font-size: 18px;
   overflow-wrap: anywhere;
 }
 
