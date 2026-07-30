@@ -2,22 +2,20 @@
 
 ## Design Direction
 
-The site deliberately commits to one dark visual world instead of supporting an automatic light
-theme. That avoids the earlier failure mode where a dark design accidentally fell back to a light
-page for many viewers. The implementation declares `color-scheme: dark`, uses a near-black base,
-and treats warm brass as the single bold accent.
+The first committed version used a dark Smatch-inspired direction. After review, the page was
+changed to a lighter visual world using the requested palette: terracotta, green, white, purple,
+and cyan.
 
-Smatch.com was the concrete visual quality reference. I borrowed the high-contrast dark ground,
-one strong accent color, a compact trust/facts strip, generous spacing, and structured feature
-cards. I did not borrow its literal green palette, B2B fashion-marketplace content, invented
-traction metrics, or co-pilot framing.
+Smatch.com remains the concrete polish reference for confident spacing, strong section structure,
+and production value. The site no longer borrows Smatch's dark ground; instead it uses a warm white
+canvas with abstract product-world imagery behind the venture panels.
 
 The typography is self-hosted: Fraunces for characterful display headlines, Manrope for clean body
 copy, and Space Mono for factual/status labels. The GoalBuddy app icon is used as the real brand
 asset for the GoalBuddy venture; the other ventures use restrained graphic treatments rather than
 fake product screenshots.
 
-Motion is decorative only. The ambient canvas network is disabled by `prefers-reduced-motion`.
+Motion is decorative only. The light ambient canvas is disabled by `prefers-reduced-motion`.
 
 ## DNS Records
 
@@ -41,7 +39,8 @@ That `www` target is based on the existing GitHub remote username in the GoalBud
 
 ## Content Notes
 
-No traction, user counts, pilots, team claims, funding claims, or launch dates were invented.
+No traction, user counts, pilots, team claims, funding claims, DUNS-as-marketing, or launch dates
+were invented.
 
 The only ambiguous operational item is whether the owner wants `www.luxfordinteractive.com` to
 redirect to the apex domain. The root domain records are required either way.

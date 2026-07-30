@@ -40,7 +40,8 @@
         const next = points[nextIndex];
         const distance = Math.hypot(point.x - next.x, point.y - next.y);
         if (distance < 155) {
-          context.strokeStyle = `rgba(242, 189, 85, ${0.12 * (1 - distance / 155)})`;
+          const alpha = 0.16 * (1 - distance / 155);
+          context.strokeStyle = `rgba(24, 168, 199, ${alpha})`;
           context.beginPath();
           context.moveTo(point.x, point.y);
           context.lineTo(next.x, next.y);
@@ -48,7 +49,11 @@
         }
       }
 
-      context.fillStyle = "rgba(244, 234, 214, 0.28)";
+      context.fillStyle = index % 3 === 0
+        ? "rgba(111, 76, 164, 0.28)"
+        : index % 3 === 1
+          ? "rgba(47, 118, 93, 0.24)"
+          : "rgba(200, 95, 67, 0.22)";
       context.beginPath();
       context.arc(point.x, point.y, point.radius, 0, Math.PI * 2);
       context.fill();
