@@ -261,7 +261,7 @@ h3 {
 h1 {
   max-width: 900px;
   margin-bottom: 24px;
-  font-size: clamp(44px, 6.2vw, 94px);
+  font-size: clamp(42px, 5.8vw, 86px);
   font-weight: 800;
   line-height: 0.92;
 }
