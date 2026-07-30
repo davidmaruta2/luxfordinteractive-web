@@ -340,11 +340,7 @@ h3 {
 
 .signal-panel {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 26px;
   min-height: 560px;
-  padding: 46px;
   border: 1px solid var(--line);
   border-radius: 8px;
   overflow: hidden;
@@ -353,16 +349,6 @@ h3 {
     linear-gradient(25deg, rgba(200, 95, 67, 0.2), transparent 46%),
     var(--white);
   box-shadow: 0 30px 80px var(--shadow);
-}
-
-.signal-caption {
-  margin: 0;
-  font-family: var(--mono);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0;
-  text-transform: uppercase;
-  color: var(--muted);
 }
 
 .signal-panel::before,
@@ -386,43 +372,66 @@ h3 {
   transform: rotate(-14deg);
 }
 
-.signal-grid {
-  position: relative;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
+.hero-collage {
+  position: absolute;
+  inset: 0;
 }
 
-.signal-chip {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  min-height: 64px;
-  padding: 14px 16px;
-  border: 1px solid var(--line);
-  background: rgba(255, 255, 255, 0.82);
-  font-weight: 800;
-  font-size: 15px;
+.collage-icon {
+  position: absolute;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 26px 60px rgba(47, 118, 93, 0.24);
 }
 
-.signal-chip i {
-  width: 10px;
-  height: 10px;
-  flex-shrink: 0;
-  border-radius: 50%;
+.collage-icon img {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
-.signal-goalbuddy { color: var(--cyan-dark); }
-.signal-goalbuddy i { background: var(--cyan); }
+.collage-goalbuddy {
+  top: 92px;
+  left: 64px;
+  width: 168px;
+  height: 168px;
+  transform: rotate(-7deg);
+  z-index: 3;
+}
 
-.signal-waddl { color: var(--green); }
-.signal-waddl i { background: var(--green); }
+.collage-waddl {
+  top: 258px;
+  left: 232px;
+  width: 128px;
+  height: 128px;
+  transform: rotate(9deg);
+  z-index: 2;
+}
 
-.signal-lilith { color: var(--purple-dark); }
-.signal-lilith i { background: var(--purple); }
+.collage-mark {
+  position: absolute;
+  width: 90px;
+  height: 90px;
+}
 
-.signal-outloud { color: var(--terracotta-dark); }
-.signal-outloud i { background: var(--terracotta); }
+.collage-mark svg {
+  width: 100%;
+  height: 100%;
+}
+
+.collage-lilith {
+  top: 60px;
+  right: 56px;
+  color: var(--purple);
+  opacity: 0.55;
+}
+
+.collage-outloud {
+  bottom: 84px;
+  left: 96px;
+  color: var(--terracotta);
+  opacity: 0.55;
+}
 
 .signal-arc {
   position: absolute;
@@ -939,8 +948,7 @@ h3 {
 
   .image-band,
   .venture-pair,
-  .mechanics-grid,
-  .signal-grid {
+  .mechanics-grid {
     grid-template-columns: 1fr;
   }
 
