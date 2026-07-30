@@ -37,8 +37,8 @@
     <main id="top">
       <section class="hero section">
         <div class="hero-copy">
-          <p class="eyebrow">UK venture studio / Company no. 17367736</p>
-          <h1>Apps that move people from screens into real rooms.</h1>
+          <p class="eyebrow">UK venture studio</p>
+          <h1>Apps that move people from screens into <span class="hl-terracotta">real rooms</span>.</h1>
           <p class="hero-lede">
             Luxford Interactive creates digital applications that improve opportunity, learning,
             and real-world connection.
@@ -55,12 +55,13 @@
           </div>
         </div>
 
-        <div class="signal-panel" aria-label="Company focus">
+        <div class="signal-panel" aria-label="The portfolio at a glance">
+          <p class="signal-caption">The portfolio, at a glance</p>
           <div class="signal-grid">
-            <span>Opportunity</span>
-            <span>Learning</span>
-            <span>Real-world connection</span>
-            <span>Purposeful apps</span>
+            <span class="signal-chip signal-goalbuddy"><i></i>GoalBuddy</span>
+            <span class="signal-chip signal-waddl"><i></i>Waddl</span>
+            <span class="signal-chip signal-lilith"><i></i>Lilith</span>
+            <span class="signal-chip signal-outloud"><i></i>OutLoud</span>
           </div>
           <div class="signal-arc" aria-hidden="true">
             <span></span>
@@ -72,21 +73,37 @@
       </section>
 
       <section class="image-band" aria-label="Luxford Interactive product worlds">
-        <div>
+        <div class="band-goalbuddy">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <line x1="18" y1="10" x2="18" y2="54" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+            <path d="M18 12 L46 20 L18 28 Z" fill="currentColor"/>
+            <circle cx="18" cy="54" r="4" fill="currentColor"/>
+          </svg>
           <span>Goal-led matching</span>
         </div>
-        <div>
+        <div class="band-waddl">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M14 24c4-10 32-10 36 0" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+            <path d="M44 20l6 4-6 4" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M50 40c-4 10-32 10-36 0" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+            <path d="M20 44l-6-4 6-4" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
           <span>Skills exchanged</span>
         </div>
-        <div>
+        <div class="band-outloud">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="32" cy="32" r="7" fill="currentColor"/>
+            <circle cx="32" cy="32" r="16" stroke="currentColor" stroke-width="2.5" opacity="0.6"/>
+            <circle cx="32" cy="32" r="25" stroke="currentColor" stroke-width="2.5" opacity="0.3"/>
+          </svg>
           <span>Confidence practised</span>
         </div>
       </section>
 
       <section class="section split-section" id="thesis">
         <div>
-          <p class="eyebrow">Company thesis</p>
-          <h2>Digital products should create momentum offline.</h2>
+          <p class="eyebrow eyebrow-green">Company thesis</p>
+          <h2>Digital products should create <span class="hl-green">momentum offline</span>.</h2>
         </div>
         <div class="thesis-copy">
           <p>
@@ -104,7 +121,7 @@
       <section class="section portfolio-section" id="portfolio">
         <div class="section-heading">
           <p class="eyebrow">Portfolio</p>
-          <h2>Four ventures, presented honestly.</h2>
+          <h2>Four ventures, presented <span class="hl-terracotta">honestly</span>.</h2>
         </div>
 
         <article class="venture venture-goalbuddy">
@@ -130,39 +147,46 @@
         </article>
 
         <article class="venture venture-waddl">
-          <div class="venture-visual exchange-visual" aria-hidden="true">
-            <span>Offer</span>
-            <i></i>
-            <span>Points</span>
-            <i></i>
-            <span>Need</span>
+          <div class="venture-visual waddl-visual">
+            <img src="assets/waddl-icon.png" alt="Waddl app icon">
+            <div class="flow-strip" aria-hidden="true">
+              <span>Offer</span>
+              <i></i>
+              <span>Points</span>
+              <i></i>
+              <span>Need</span>
+            </div>
           </div>
           <div class="venture-copy">
             <div class="venture-meta">
               <span>In development</span>
-              <span>Working name</span>
             </div>
             <h3>Waddl</h3>
-            <p class="venture-line">HomeExchange, but for everyday skills and services.</p>
+            <p class="venture-line">Share skills. Build community.</p>
             <p>
-              Waddl is a community-powered cost-of-living app where people list what they can offer
-              and what they need. Exchanges can happen directly, or through a points economy that
-              removes the usual barter problem of needing two people to want exactly what the other
-              offers at the same time.
+              Waddl is a local skills exchange app built around community spirit: neighbours share
+              what they can do, get help with what they need, and build a more connected community
+              in the process. Exchanges can happen directly, or through a HomeExchange-style points
+              economy that removes the usual barter problem of needing two people to want exactly
+              what the other offers at the same time.
             </p>
             <div class="detail-list" aria-label="Waddl trust model">
-              <span>Verified identity</span>
-              <span>Two-sided reviews</span>
-              <span>Skill proof</span>
-              <span>Escrowed points</span>
-              <span>Dispute process</span>
+              <span>Points held in escrow</span>
+              <span>Reviews after completion</span>
+              <span>Report &amp; block</span>
+              <span>Admin moderation</span>
             </div>
           </div>
         </article>
 
         <div class="venture-pair">
-          <article class="venture compact-venture">
-            <div class="monogram" aria-hidden="true">L</div>
+          <article class="venture compact-venture venture-lilith">
+            <div class="monogram monogram-lilith" aria-hidden="true">
+              <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M78 24c22 12 22 60 0 72" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+              </svg>
+              <span>L</span>
+            </div>
             <div class="venture-copy">
               <div class="venture-meta">
                 <span>Name reserved</span>
@@ -175,8 +199,15 @@
             </div>
           </article>
 
-          <article class="venture compact-venture">
-            <div class="monogram loud" aria-hidden="true">O</div>
+          <article class="venture compact-venture venture-outloud">
+            <div class="monogram monogram-outloud loud" aria-hidden="true">
+              <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="60" cy="60" r="20" stroke="currentColor" stroke-width="2" opacity="0.55"/>
+                <circle cx="60" cy="60" r="34" stroke="currentColor" stroke-width="2" opacity="0.32"/>
+                <circle cx="60" cy="60" r="48" stroke="currentColor" stroke-width="2" opacity="0.16"/>
+              </svg>
+              <span>O</span>
+            </div>
             <div class="venture-copy">
               <div class="venture-meta">
                 <span>Concept being shaped</span>
@@ -193,8 +224,8 @@
 
       <section class="section mechanics-section">
         <div class="section-heading">
-          <p class="eyebrow">Waddl model</p>
-          <h2>Trust is the product, not a feature.</h2>
+          <p class="eyebrow eyebrow-green">Waddl model</p>
+          <h2>Trust is the <span class="hl-green">product</span>, not a feature.</h2>
         </div>
         <div class="mechanics-grid">
           <article>

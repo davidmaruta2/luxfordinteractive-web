@@ -63,11 +63,14 @@
   --line: rgba(36, 29, 33, 0.14);
   --terracotta: #c85f43;
   --terracotta-dark: #8f3f31;
+  --terracotta-soft: #f7e3da;
   --green: #2f765d;
   --green-soft: #dcefe4;
   --purple: #6f4ca4;
+  --purple-dark: #52377d;
   --purple-soft: #eadff7;
   --cyan: #18a8c7;
+  --cyan-dark: #0e7288;
   --cyan-soft: #dbf5fa;
   --shadow: rgba(83, 47, 44, 0.14);
   --display: "Fraunces", Georgia, serif;
@@ -215,9 +218,31 @@ img {
 }
 
 .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   margin: 0 0 18px;
   color: var(--terracotta-dark);
 }
+
+.eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 2px;
+  background: currentColor;
+}
+
+.eyebrow-green { color: var(--green); }
+.eyebrow-purple { color: var(--purple-dark); }
+.eyebrow-cyan { color: var(--cyan-dark); }
+
+/* accent words inside headings -- ties palette use to real content
+   structure (venture identity, thesis emphasis) rather than decoration */
+.hl-terracotta { color: var(--terracotta); }
+.hl-green { color: var(--green); }
+.hl-purple { color: var(--purple); }
+.hl-cyan { color: var(--cyan-dark); }
 
 h1,
 h2,
@@ -227,7 +252,8 @@ p {
 }
 
 h1,
-h2 {
+h2,
+h3 {
   font-family: var(--display);
   letter-spacing: 0;
 }
@@ -236,18 +262,21 @@ h1 {
   max-width: 900px;
   margin-bottom: 24px;
   font-size: clamp(44px, 6.2vw, 94px);
+  font-weight: 800;
   line-height: 0.92;
 }
 
 h2 {
   margin-bottom: 0;
   font-size: clamp(34px, 5vw, 72px);
+  font-weight: 600;
   line-height: 1;
 }
 
 h3 {
   margin-bottom: 12px;
   font-size: clamp(25px, 3vw, 42px);
+  font-weight: 600;
   line-height: 1.05;
 }
 
@@ -311,7 +340,11 @@ h3 {
 
 .signal-panel {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
   min-height: 560px;
+  padding: 46px;
   border: 1px solid var(--line);
   border-radius: 8px;
   overflow: hidden;
@@ -320,6 +353,16 @@ h3 {
     linear-gradient(25deg, rgba(200, 95, 67, 0.2), transparent 46%),
     var(--white);
   box-shadow: 0 30px 80px var(--shadow);
+}
+
+.signal-caption {
+  margin: 0;
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  color: var(--muted);
 }
 
 .signal-panel::before,
@@ -344,30 +387,42 @@ h3 {
 }
 
 .signal-grid {
-  position: absolute;
-  inset: 46px;
+  position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.signal-chip {
+  display: flex;
+  align-items: center;
   gap: 10px;
-  align-content: start;
-}
-
-.signal-grid span {
-  min-height: 120px;
-  padding: 18px;
+  min-height: 64px;
+  padding: 14px 16px;
   border: 1px solid var(--line);
-  background: rgba(255, 255, 255, 0.76);
-  color: var(--muted);
+  background: rgba(255, 255, 255, 0.82);
   font-weight: 800;
+  font-size: 15px;
 }
 
-.signal-grid span:first-child {
-  color: var(--green);
+.signal-chip i {
+  width: 10px;
+  height: 10px;
+  flex-shrink: 0;
+  border-radius: 50%;
 }
 
-.signal-grid span:last-child {
-  color: var(--purple);
-}
+.signal-goalbuddy { color: var(--cyan-dark); }
+.signal-goalbuddy i { background: var(--cyan); }
+
+.signal-waddl { color: var(--green); }
+.signal-waddl i { background: var(--green); }
+
+.signal-lilith { color: var(--purple-dark); }
+.signal-lilith i { background: var(--purple); }
+
+.signal-outloud { color: var(--terracotta-dark); }
+.signal-outloud i { background: var(--terracotta); }
 
 .signal-arc {
   position: absolute;
@@ -407,42 +462,40 @@ h3 {
   box-shadow: 0 18px 50px rgba(83, 47, 44, 0.11);
 }
 
-.image-band div::before,
 .image-band div::after {
   position: absolute;
   content: "";
-}
-
-.image-band div::before {
-  inset: 24px;
-  border: 1px solid currentColor;
-  opacity: 0.32;
-  transform: rotate(-8deg);
-}
-
-.image-band div::after {
   width: 170px;
   height: 170px;
   right: -36px;
   bottom: -42px;
   border-radius: 50%;
   background: currentColor;
-  opacity: 0.16;
+  opacity: 0.14;
 }
 
-.image-band div:nth-child(1) {
-  color: var(--cyan);
+.image-band svg {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  width: 40px;
+  height: 40px;
+  color: currentColor;
+}
+
+.band-goalbuddy {
+  color: var(--cyan-dark);
   background: linear-gradient(135deg, var(--cyan-soft), var(--white));
 }
 
-.image-band div:nth-child(2) {
+.band-waddl {
   color: var(--green);
   background: linear-gradient(135deg, var(--green-soft), var(--white));
 }
 
-.image-band div:nth-child(3) {
-  color: var(--purple);
-  background: linear-gradient(135deg, var(--purple-soft), var(--white));
+.band-outloud {
+  color: var(--terracotta-dark);
+  background: linear-gradient(135deg, var(--terracotta-soft), var(--white));
 }
 
 .image-band span {
@@ -505,32 +558,47 @@ h3 {
   box-shadow: 0 24px 80px rgba(47, 118, 93, 0.22);
 }
 
-.exchange-visual {
-  grid-template-rows: 1fr auto 1fr auto 1fr;
+.waddl-visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 26px;
   padding: 36px;
   background:
-    linear-gradient(135deg, var(--green-soft), transparent),
+    radial-gradient(circle at 26% 22%, rgba(47, 118, 93, 0.24), transparent 13rem),
+    radial-gradient(circle at 78% 80%, rgba(200, 95, 67, 0.16), transparent 14rem),
     var(--white);
 }
 
-.exchange-visual span {
-  display: grid;
-  width: 100%;
-  min-height: 78px;
-  place-items: center;
+.waddl-visual img {
+  width: min(180px, 55%);
+  border-radius: 30px;
+  box-shadow: 0 24px 80px rgba(47, 118, 93, 0.22);
+}
+
+.flow-strip {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.flow-strip span {
+  padding: 7px 10px;
   border: 1px solid rgba(47, 118, 93, 0.3);
-  background: rgba(255, 255, 255, 0.68);
+  background: rgba(255, 255, 255, 0.72);
   color: var(--green);
   font-family: var(--mono);
+  font-size: 11px;
   font-weight: 700;
   text-transform: uppercase;
 }
 
-.exchange-visual i {
-  width: 1px;
-  height: 44px;
+.flow-strip i {
+  width: 16px;
+  height: 1px;
   background: var(--green);
-  opacity: 0.34;
+  opacity: 0.5;
 }
 
 .venture-copy {
@@ -542,7 +610,6 @@ h3 {
   flex-wrap: wrap;
   gap: 10px;
   margin-bottom: 22px;
-  color: var(--terracotta-dark);
 }
 
 .venture-meta span,
@@ -550,8 +617,43 @@ h3 {
   padding: 6px 8px;
   border: 1px solid var(--line);
   background: var(--paper);
-  color: var(--terracotta-dark);
+  color: var(--muted);
   text-decoration: none;
+}
+
+/* Each venture carries one palette colour consistently through its
+   heading, status chips, and visual panel -- this is how the accent
+   colours read as section identity instead of scattered decoration:
+   GoalBuddy = cyan, Waddl = green, Lilith = purple, OutLoud = terracotta. */
+
+.venture-goalbuddy h3 { color: var(--cyan-dark); }
+.venture-goalbuddy .venture-meta span,
+.venture-goalbuddy .venture-meta a {
+  border-color: rgba(24, 168, 199, 0.32);
+  background: var(--cyan-soft);
+  color: var(--cyan-dark);
+}
+
+.venture-waddl h3 { color: var(--green); }
+.venture-waddl .venture-meta span,
+.venture-waddl .venture-meta a {
+  border-color: rgba(47, 118, 93, 0.3);
+  background: var(--green-soft);
+  color: var(--green);
+}
+
+.venture-lilith h3 { color: var(--purple-dark); }
+.venture-lilith .venture-meta span {
+  border-color: rgba(111, 76, 164, 0.32);
+  background: var(--purple-soft);
+  color: var(--purple-dark);
+}
+
+.venture-outloud h3 { color: var(--terracotta-dark); }
+.venture-outloud .venture-meta span {
+  border-color: rgba(200, 95, 67, 0.34);
+  background: var(--terracotta-soft);
+  color: var(--terracotta-dark);
 }
 
 .venture-line {
@@ -593,6 +695,7 @@ h3 {
 }
 
 .monogram {
+  position: relative;
   display: grid;
   min-height: 100%;
   place-items: center;
@@ -600,10 +703,21 @@ h3 {
   background:
     linear-gradient(150deg, var(--purple-soft), transparent),
     var(--white);
-  color: var(--purple);
+  color: var(--purple-dark);
   font-family: var(--display);
   font-size: 100px;
   font-weight: 800;
+  overflow: hidden;
+}
+
+.monogram svg {
+  position: absolute;
+  width: 74%;
+  height: 74%;
+}
+
+.monogram span {
+  position: relative;
 }
 
 .monogram.loud {
