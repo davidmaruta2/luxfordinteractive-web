@@ -54,6 +54,17 @@
   src: url("assets/fonts/space-mono-700.ttf") format("truetype");
 }
 
+/* Baloo 2 ExtraBold: the exact face the real goalbuddy app wordmark uses
+   (see GoalBuddyWordmark in the app's own source), used only for that
+   wordmark reproduction below -- never as a general body/heading face. */
+@font-face {
+  font-family: "Baloo 2";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("assets/fonts/baloo2-800.woff2") format("woff2");
+}
+
 :root {
   color-scheme: light;
   --paper: #fffaf2;
@@ -691,6 +702,43 @@ h3 {
   border-color: rgba(200, 95, 67, 0.34);
   background: var(--terracotta-soft);
   color: var(--terracotta-dark);
+}
+
+/* Real goalbuddy wordmark, reproduced from the app's own GoalBuddyWordmark
+   component: Baloo 2 ExtraBold, all lowercase, "goal" and "b/uddy" each in
+   their real brand colour, with the flag-on-the-"b" mark from the real
+   app icon -- not a generic heading treatment. */
+.gb-wordmark {
+  display: inline-flex;
+  align-items: baseline;
+  font-family: "Baloo 2", var(--display);
+  font-weight: 800;
+  font-size: clamp(24px, 2.8vw, 36px);
+  line-height: 1;
+}
+
+.gb-goal { color: #368050; }
+.gb-uddy,
+.gb-b { color: #3e8fb0; }
+
+.gb-b-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+.gb-flag {
+  position: absolute;
+  left: 0.1em;
+  top: -0.62em;
+  width: 0.46em;
+  height: 0.62em;
+  pointer-events: none;
+}
+
+.waddl-wordmark-img {
+  display: block;
+  height: clamp(30px, 3.4vw, 42px);
+  width: auto;
 }
 
 .venture-line {
