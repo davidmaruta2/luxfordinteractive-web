@@ -455,6 +455,16 @@ h3 {
 .signal-arc span:nth-child(3) { --i: 2; }
 .signal-arc span:nth-child(4) { --i: 3; }
 
+.ethos-section {
+  padding-bottom: 40px;
+}
+
+.ethos-lead {
+  margin-top: 18px;
+  color: var(--muted);
+  font-size: 18px;
+}
+
 .image-band {
   display: grid;
   width: min(1180px, calc(100% - 40px));
