@@ -685,19 +685,33 @@ h3 {
   flex-shrink: 0;
 }
 
-.tech-spec-cyan { color: #6fe0f5; }
+.tech-spec-cyan {
+  background: rgba(111, 224, 245, 0.16);
+  border-color: rgba(111, 224, 245, 0.32);
+}
 .tech-spec-cyan svg { color: #6fe0f5; }
-.tech-spec-cyan:hover { border-color: rgba(111, 224, 245, 0.5); }
-.tech-spec-cyan span { color: rgba(255, 255, 255, 0.9); }
+.tech-spec-cyan:hover { border-color: rgba(111, 224, 245, 0.6); }
 
+.tech-spec-green {
+  background: rgba(107, 219, 160, 0.16);
+  border-color: rgba(107, 219, 160, 0.32);
+}
 .tech-spec-green svg { color: #6bdba0; }
-.tech-spec-green:hover { border-color: rgba(107, 219, 160, 0.5); }
+.tech-spec-green:hover { border-color: rgba(107, 219, 160, 0.6); }
 
+.tech-spec-purple {
+  background: rgba(189, 155, 240, 0.16);
+  border-color: rgba(189, 155, 240, 0.32);
+}
 .tech-spec-purple svg { color: #bd9bf0; }
-.tech-spec-purple:hover { border-color: rgba(189, 155, 240, 0.5); }
+.tech-spec-purple:hover { border-color: rgba(189, 155, 240, 0.6); }
 
+.tech-spec-terracotta {
+  background: rgba(240, 161, 126, 0.16);
+  border-color: rgba(240, 161, 126, 0.32);
+}
 .tech-spec-terracotta svg { color: #f0a17e; }
-.tech-spec-terracotta:hover { border-color: rgba(240, 161, 126, 0.5); }
+.tech-spec-terracotta:hover { border-color: rgba(240, 161, 126, 0.6); }
 
 .section-heading {
   max-width: 760px;
