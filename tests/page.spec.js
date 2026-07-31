@@ -15,7 +15,7 @@ test("desktop page renders without console errors", async ({ page }) => {
   await page.goto(siteUrl);
 
   await expect(page.getByRole("heading", { name: /Apps that move people/ })).toBeVisible();
-  await expect(page.getByRole("heading", { name: "Four ventures, presented honestly." })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Our ventures, presented honestly." })).toBeVisible();
   await expect(page.locator("img[alt='goalbuddy app icon']")).toBeVisible();
   expect(errors).toEqual([]);
 });
