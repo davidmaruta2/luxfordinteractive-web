@@ -210,6 +210,7 @@ img {
 
 .portfolio-section {
   position: relative;
+  padding-top: 56px;
   border-top: 1px solid var(--line);
 }
 
