@@ -561,7 +561,7 @@ h3 {
 
 .venture-visual {
   display: grid;
-  height: 150px;
+  height: 104px;
   place-items: center;
   border-bottom: 1px solid var(--line);
   background: var(--white);
@@ -575,10 +575,10 @@ h3 {
 }
 
 .goalbuddy-visual img {
-  width: 88px;
-  height: 88px;
-  border-radius: 20px;
-  box-shadow: 0 16px 40px rgba(47, 118, 93, 0.22);
+  width: 62px;
+  height: 62px;
+  border-radius: 15px;
+  box-shadow: 0 12px 28px rgba(47, 118, 93, 0.22);
 }
 
 .waddl-visual {
@@ -589,10 +589,10 @@ h3 {
 }
 
 .waddl-visual img {
-  width: 88px;
-  height: 88px;
-  border-radius: 20px;
-  box-shadow: 0 16px 40px rgba(47, 118, 93, 0.22);
+  width: 62px;
+  height: 62px;
+  border-radius: 15px;
+  box-shadow: 0 12px 28px rgba(47, 118, 93, 0.22);
 }
 
 .monogram-visual {
@@ -613,14 +613,14 @@ h3 {
 
 .monogram-motif {
   position: absolute;
-  width: 62%;
-  height: 62%;
+  width: 54%;
+  height: 54%;
 }
 
 .monogram-letter {
   position: relative;
   font-family: var(--display);
-  font-size: 56px;
+  font-size: 38px;
   font-weight: 800;
 }
 
