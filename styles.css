@@ -222,7 +222,7 @@ img {
   z-index: -1;
   width: 100vw;
   transform: translateX(-50%);
-  background: linear-gradient(180deg, rgba(200, 95, 67, 0.14), rgba(200, 95, 67, 0.05));
+  background: #f7ded1;
 }
 
 .hero {
