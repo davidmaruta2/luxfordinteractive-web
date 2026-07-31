@@ -320,7 +320,6 @@ h3 {
 }
 
 .hero-support,
-.thesis-copy p,
 .contact-section p {
   color: var(--muted);
   font-size: 18px;
@@ -571,7 +570,6 @@ h3 {
   line-height: 1.5;
 }
 
-.split-section,
 .contact-section {
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
@@ -579,62 +577,75 @@ h3 {
   align-items: start;
 }
 
-.thesis-heading {
+/* Technology "applet" -- a dark, technical-feeling panel, deliberately
+   distinct from the post-it note's playful register, since this section
+   is about engineering credibility, not mission/values. */
+.tech-section {
+  display: flex;
+  justify-content: center;
+}
+
+.tech-panel {
   position: relative;
+  width: 100%;
+  max-width: 720px;
+  padding: 48px;
+  border-radius: 12px;
+  background: #12181b;
+  box-shadow: 0 30px 70px rgba(18, 24, 27, 0.28);
 }
 
-/* Literal "momentum" motif -- an ascending line -- sitting as a quiet
-   watermark behind the heading, rather than leaving this column as plain
-   text with nothing else on the page's left side. */
-.momentum-motif {
-  position: absolute;
-  top: -18px;
-  right: -10px;
-  z-index: -1;
-  width: 220px;
-  height: 176px;
-  color: var(--green);
-  opacity: 0.14;
+.tech-eyebrow {
+  margin: 0 0 16px;
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  color: var(--cyan);
 }
 
-.thesis-copy {
-  padding-top: 38px;
+.tech-headline {
+  margin: 0 0 18px;
+  color: var(--white);
+  font-size: clamp(26px, 3.4vw, 36px);
+  line-height: 1.1;
 }
 
-/* Each example maps to one real venture, coloured to match its own accent
-   (goalbuddy=cyan, Waddl=green, OutLoud=terracotta, Lilith=purple) -- a
-   small preview of the Portfolio section directly below, not decoration. */
-.thesis-examples {
+.tech-copy {
+  max-width: 56ch;
+  margin: 0 0 28px;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.tech-specs {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin-top: 28px;
+  gap: 14px;
 }
 
-.thesis-example {
+.tech-specs span {
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 14px 16px;
-  border: 1px solid var(--line);
+  padding: 12px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 7px;
-  background: var(--white);
-  color: var(--ink);
-  font-size: 15px;
-  font-weight: 700;
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 14px;
+  font-weight: 600;
 }
 
-.thesis-example i {
-  width: 10px;
-  height: 10px;
+.tech-specs i {
+  width: 8px;
+  height: 8px;
   flex-shrink: 0;
   border-radius: 50%;
+  background: var(--cyan);
 }
-
-.thesis-example-goalbuddy i { background: var(--cyan); }
-.thesis-example-waddl i { background: var(--green); }
-.thesis-example-outloud i { background: var(--terracotta); }
-.thesis-example-lilith i { background: var(--purple); }
 
 .section-heading {
   max-width: 760px;
@@ -965,8 +976,11 @@ h3 {
 
 @media (max-width: 920px) {
   .hero,
-  .split-section,
   .contact-section {
+    grid-template-columns: 1fr;
+  }
+
+  .tech-specs {
     grid-template-columns: 1fr;
   }
 
@@ -1028,8 +1042,7 @@ h3 {
 
   .image-band,
   .venture-grid,
-  .mechanics-grid,
-  .thesis-examples {
+  .mechanics-grid {
     grid-template-columns: 1fr;
   }
 
