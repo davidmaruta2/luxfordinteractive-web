@@ -351,109 +351,91 @@ h3 {
 
 .signal-panel {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 26px;
   min-height: 560px;
-  padding: 46px;
   border: 1px solid var(--line);
   border-radius: 8px;
   overflow: hidden;
-  background:
-    linear-gradient(135deg, rgba(24, 168, 199, 0.24), transparent 38%),
-    linear-gradient(25deg, rgba(200, 95, 67, 0.2), transparent 46%),
-    var(--white);
   box-shadow: 0 30px 80px var(--shadow);
 }
 
-.signal-caption {
-  margin: 0;
+/* Ambassador poster: a deliberate, bold departure from the rest of the
+   page's palette -- solid warm yellow instead of the usual terracotta/
+   green/purple/cyan, so this one call-to-action reads as a distinct
+   "stop and look" moment rather than another quiet card. */
+.ambassador-panel {
+  display: flex;
+  align-items: center;
+  padding: 56px;
+  background: #f0b429;
+}
+
+.ambassador-arc {
+  position: absolute;
+  right: -40px;
+  bottom: -40px;
+  width: 260px;
+  height: 260px;
+}
+
+.ambassador-arc span {
+  position: absolute;
+  inset: calc(var(--i, 0) * 22px);
+  border: 1px solid rgba(36, 29, 33, 0.16);
+  border-radius: 50%;
+}
+
+.ambassador-arc span:nth-child(1) { --i: 0; }
+.ambassador-arc span:nth-child(2) { --i: 1; }
+.ambassador-arc span:nth-child(3) { --i: 2; }
+.ambassador-arc span:nth-child(4) { --i: 3; }
+
+.ambassador-poster {
+  position: relative;
+  z-index: 1;
+}
+
+.ambassador-eyebrow {
+  margin: 0 0 18px;
   font-family: var(--mono);
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0;
   text-transform: uppercase;
-  color: var(--muted);
+  color: rgba(36, 29, 33, 0.68);
 }
 
-.signal-panel::before,
-.signal-panel::after {
-  position: absolute;
-  content: "";
+.ambassador-headline {
+  margin: 0 0 20px;
+  color: var(--ink);
+  font-size: clamp(32px, 4vw, 46px);
+  line-height: 1.02;
 }
 
-.signal-panel::before {
-  inset: 28px;
-  border: 1px solid rgba(47, 118, 93, 0.22);
+.ambassador-copy {
+  max-width: 32ch;
+  margin: 0 0 30px;
+  color: rgba(36, 29, 33, 0.78);
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.5;
 }
 
-.signal-panel::after {
-  width: 82%;
-  height: 52%;
-  right: -16%;
-  bottom: -6%;
-  border: 1px solid rgba(111, 76, 164, 0.34);
-  background: linear-gradient(135deg, rgba(234, 223, 247, 0.42), transparent);
-  transform: rotate(-14deg);
-}
-
-.signal-grid {
-  position: relative;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-}
-
-.signal-chip {
-  display: flex;
+.ambassador-cta {
+  display: inline-flex;
   align-items: center;
-  gap: 10px;
-  min-height: 64px;
-  padding: 14px 16px;
-  border: 1px solid var(--line);
-  background: rgba(255, 255, 255, 0.82);
+  min-height: 48px;
+  padding: 13px 20px;
+  border-radius: 7px;
+  background: var(--ink);
+  color: #f0b429;
   font-weight: 800;
-  font-size: 15px;
+  text-decoration: none;
+  transition: transform 160ms ease;
 }
 
-.signal-chip i {
-  width: 10px;
-  height: 10px;
-  flex-shrink: 0;
-  border-radius: 50%;
+.ambassador-cta:hover {
+  transform: translateY(-2px);
 }
-
-.signal-goalbuddy { color: var(--cyan-dark); }
-.signal-goalbuddy i { background: var(--cyan); }
-
-.signal-waddl { color: var(--green); }
-.signal-waddl i { background: var(--green); }
-
-.signal-lilith { color: var(--purple-dark); }
-.signal-lilith i { background: var(--purple); }
-
-.signal-outloud { color: var(--terracotta-dark); }
-.signal-outloud i { background: var(--terracotta); }
-
-.signal-arc {
-  position: absolute;
-  right: 48px;
-  bottom: 48px;
-  width: 260px;
-  height: 260px;
-}
-
-.signal-arc span {
-  position: absolute;
-  inset: calc(var(--i, 0) * 24px);
-  border: 1px solid rgba(200, 95, 67, 0.34);
-  transform: rotate(18deg);
-}
-
-.signal-arc span:nth-child(1) { --i: 0; }
-.signal-arc span:nth-child(2) { --i: 1; }
-.signal-arc span:nth-child(3) { --i: 2; }
-.signal-arc span:nth-child(4) { --i: 3; }
 
 .ethos-section {
   padding-bottom: 40px;
@@ -557,12 +539,19 @@ h3 {
   margin-bottom: 36px;
 }
 
-.venture {
+.venture-grid {
   display: grid;
-  grid-template-columns: 360px minmax(0, 1fr);
-  gap: 36px;
-  align-items: stretch;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
   margin-top: 18px;
+}
+
+/* One consistent card template for all four ventures -- same box, same
+   icon-strip height, same content order -- regardless of whether that
+   venture has a real logo, a reproduced wordmark, or just a letter. */
+.venture {
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -572,9 +561,9 @@ h3 {
 
 .venture-visual {
   display: grid;
-  min-height: 340px;
+  height: 150px;
   place-items: center;
-  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
   background: var(--white);
 }
 
@@ -586,18 +575,13 @@ h3 {
 }
 
 .goalbuddy-visual img {
-  width: min(190px, 50%);
-  border-radius: 36px;
-  box-shadow: 0 24px 80px rgba(47, 118, 93, 0.22);
+  width: 88px;
+  height: 88px;
+  border-radius: 20px;
+  box-shadow: 0 16px 40px rgba(47, 118, 93, 0.22);
 }
 
 .waddl-visual {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 26px;
-  padding: 36px;
   background:
     radial-gradient(circle at 26% 22%, rgba(47, 118, 93, 0.24), transparent 13rem),
     radial-gradient(circle at 78% 80%, rgba(200, 95, 67, 0.16), transparent 14rem),
@@ -605,33 +589,39 @@ h3 {
 }
 
 .waddl-visual img {
-  width: min(180px, 55%);
-  border-radius: 30px;
-  box-shadow: 0 24px 80px rgba(47, 118, 93, 0.22);
+  width: 88px;
+  height: 88px;
+  border-radius: 20px;
+  box-shadow: 0 16px 40px rgba(47, 118, 93, 0.22);
 }
 
-.flow-strip {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+.monogram-visual {
+  position: relative;
+  background:
+    linear-gradient(150deg, var(--purple-soft), transparent),
+    var(--white);
+  color: var(--purple-dark);
+  overflow: hidden;
 }
 
-.flow-strip span {
-  padding: 7px 10px;
-  border: 1px solid rgba(47, 118, 93, 0.3);
-  background: rgba(255, 255, 255, 0.72);
-  color: var(--green);
-  font-family: var(--mono);
-  font-size: 11px;
-  font-weight: 700;
-  text-transform: uppercase;
+.monogram-outloud {
+  background:
+    linear-gradient(150deg, rgba(200, 95, 67, 0.18), transparent),
+    var(--white);
+  color: var(--terracotta-dark);
 }
 
-.flow-strip svg {
-  width: 16px;
-  height: 16px;
-  color: var(--green);
-  opacity: 0.55;
+.monogram-motif {
+  position: absolute;
+  width: 62%;
+  height: 62%;
+}
+
+.monogram-letter {
+  position: relative;
+  font-family: var(--display);
+  font-size: 56px;
+  font-weight: 800;
 }
 
 .store-badges {
@@ -659,15 +649,18 @@ h3 {
   height: 16px;
 }
 
-.venture-copy {
-  padding: 36px;
+.venture-body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 28px 30px 30px;
 }
 
 .venture-meta {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin-bottom: 22px;
+  margin-bottom: 18px;
 }
 
 .venture-meta span,
@@ -717,14 +710,16 @@ h3 {
 /* Real goalbuddy wordmark, reproduced from the app's own GoalBuddyWordmark
    component: Baloo 2 ExtraBold, all lowercase, "goal" and "b/uddy" each in
    their real brand colour, with the flag-on-the-"b" mark from the real
-   app icon -- not a generic heading treatment. */
+   app icon -- not a generic heading treatment. Sized to exactly match the
+   plain h3 used by Lilith/OutLoud, not larger, so all four cards carry the
+   same visual weight regardless of which ones have a real logo. */
 .gb-wordmark {
   display: inline-flex;
   align-items: baseline;
   font-family: "Baloo 2", var(--display);
   font-weight: 800;
-  font-size: clamp(24px, 2.8vw, 36px);
-  line-height: 1;
+  font-size: clamp(24px, 2.8vw, 38px);
+  line-height: 1.05;
 }
 
 .gb-goal { color: #368050; }
@@ -747,79 +742,23 @@ h3 {
 
 .waddl-wordmark-img {
   display: block;
-  height: clamp(30px, 3.4vw, 42px);
+  height: clamp(24px, 2.8vw, 38px);
   width: auto;
 }
 
 .venture-line {
-  color: var(--ink);
-  font-size: 21px;
-  font-weight: 800;
-  line-height: 1.3;
-}
-
-.venture-copy p:not(.venture-line) {
+  flex-grow: 1;
+  margin-bottom: 22px;
   color: var(--muted);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
 }
 
-.detail-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 22px;
-}
-
-.detail-list span {
-  padding: 7px 9px;
-  border: 1px solid rgba(47, 118, 93, 0.3);
-  background: var(--green-soft);
-  color: var(--green);
-  font-size: 13px;
-  font-weight: 800;
-}
-
-.venture-pair,
 .mechanics-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 18px;
-}
-
-.compact-venture {
-  grid-template-columns: 150px minmax(0, 1fr);
-}
-
-.monogram {
-  position: relative;
-  display: grid;
-  min-height: 100%;
-  place-items: center;
-  border-right: 1px solid var(--line);
-  background:
-    linear-gradient(150deg, var(--purple-soft), transparent),
-    var(--white);
-  color: var(--purple-dark);
-  font-family: var(--display);
-  font-size: 100px;
-  font-weight: 800;
-  overflow: hidden;
-}
-
-.monogram svg {
-  position: absolute;
-  width: 74%;
-  height: 74%;
-}
-
-.monogram span {
-  position: relative;
-}
-
-.monogram.loud {
-  background:
-    linear-gradient(150deg, rgba(200, 95, 67, 0.18), transparent),
-    var(--white);
-  color: var(--terracotta-dark);
 }
 
 .mechanics-grid article {
@@ -925,9 +864,7 @@ h3 {
 @media (max-width: 920px) {
   .hero,
   .split-section,
-  .contact-section,
-  .venture,
-  .compact-venture {
+  .contact-section {
     grid-template-columns: 1fr;
   }
 
@@ -941,16 +878,8 @@ h3 {
   }
 
   .image-band,
-  .venture-pair,
   .mechanics-grid {
     grid-template-columns: 1fr 1fr;
-  }
-
-  .venture-visual,
-  .monogram {
-    min-height: 220px;
-    border-right: 0;
-    border-bottom: 1px solid var(--line);
   }
 
   .contact-link {
@@ -996,9 +925,8 @@ h3 {
   }
 
   .image-band,
-  .venture-pair,
-  .mechanics-grid,
-  .signal-grid {
+  .venture-grid,
+  .mechanics-grid {
     grid-template-columns: 1fr;
   }
 
