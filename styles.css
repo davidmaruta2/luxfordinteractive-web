@@ -508,8 +508,8 @@ h3 {
 
 .image-band > div {
   position: relative;
-  min-height: 190px;
   overflow: hidden;
+  padding: 70px 24px 24px;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--white);
@@ -553,10 +553,7 @@ h3 {
 }
 
 .image-band .band-copy {
-  position: absolute;
-  left: 24px;
-  bottom: 20px;
-  right: 24px;
+  position: relative;
 }
 
 .image-band span {
@@ -567,10 +564,11 @@ h3 {
 }
 
 .band-tagline {
-  margin: 4px 0 0;
+  margin: 6px 0 0;
   color: var(--muted);
   font-size: 14px;
   font-weight: 600;
+  line-height: 1.5;
 }
 
 .split-section,
