@@ -583,6 +583,41 @@ h3 {
   padding-top: 38px;
 }
 
+/* Each example maps to one real venture, coloured to match its own accent
+   (goalbuddy=cyan, Waddl=green, OutLoud=terracotta, Lilith=purple) -- a
+   small preview of the Portfolio section directly below, not decoration. */
+.thesis-examples {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.thesis-example {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: var(--white);
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.thesis-example i {
+  width: 10px;
+  height: 10px;
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+
+.thesis-example-goalbuddy i { background: var(--cyan); }
+.thesis-example-waddl i { background: var(--green); }
+.thesis-example-outloud i { background: var(--terracotta); }
+.thesis-example-lilith i { background: var(--purple); }
+
 .section-heading {
   max-width: 760px;
   margin-bottom: 36px;
@@ -975,7 +1010,8 @@ h3 {
 
   .image-band,
   .venture-grid,
-  .mechanics-grid {
+  .mechanics-grid,
+  .thesis-examples {
     grid-template-columns: 1fr;
   }
 
