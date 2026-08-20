@@ -74,7 +74,7 @@ removes DUNS from visible page content, and uses a light palette with abstract i
 - `index.html` - single static page and all content.
 - `styles.css` - full visual system, responsive rules, self-hosted fonts.
 - `script.js` - decorative ambient canvas, disabled under `prefers-reduced-motion`.
-- `assets/goalbuddy-icon.png` - real GoalBuddy icon copied from the app repo.
+- `assets/keenlee-icon.png` - real keenlee icon copied from the app repo (GoalBuddy was renamed to keenlee, 20 Aug 2026).
 - `REPORT.md` - design rationale and DNS records.
 - `README.md` - hosting/DNS notes.
 - `tests/page.spec.js` - Playwright checks for desktop render, mobile render, and reduced motion.

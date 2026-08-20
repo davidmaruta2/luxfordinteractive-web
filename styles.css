@@ -54,15 +54,16 @@
   src: url("assets/fonts/space-mono-700.ttf") format("truetype");
 }
 
-/* Baloo 2 ExtraBold: the exact face the real goalbuddy app wordmark uses
-   (see GoalBuddyWordmark in the app's own source), used only for that
+/* Poppins ExtraBold: the exact face the real keenlee app wordmark uses
+   (see KeenleeWordmark in the app's own source, 20 Aug 2026 rebrand -- this
+   replaced Baloo 2, the old GoalBuddy wordmark's face), used only for that
    wordmark reproduction below -- never as a general body/heading face. */
 @font-face {
-  font-family: "Baloo 2";
+  font-family: "Poppins";
   font-style: normal;
   font-weight: 800;
   font-display: swap;
-  src: url("assets/fonts/baloo2-800.woff2") format("woff2");
+  src: url("assets/fonts/poppins-800.ttf") format("truetype");
 }
 
 :root {
@@ -746,14 +747,14 @@ h3 {
   background: var(--white);
 }
 
-.goalbuddy-visual {
+.keenlee-visual {
   background:
     radial-gradient(circle at 30% 28%, rgba(24, 168, 199, 0.32), transparent 13rem),
     radial-gradient(circle at 74% 76%, rgba(47, 118, 93, 0.22), transparent 14rem),
     var(--white);
 }
 
-.goalbuddy-visual img {
+.keenlee-visual img {
   width: 62px;
   height: 62px;
   border-radius: 15px;
@@ -854,11 +855,11 @@ h3 {
 /* Each venture carries one palette colour consistently through its
    heading, status chips, and visual panel -- this is how the accent
    colours read as section identity instead of scattered decoration:
-   GoalBuddy = cyan, Waddl = green, Lilith = purple, OutLoud = terracotta. */
+   keenlee = cyan, Waddl = green, Lilith = purple, OutLoud = terracotta. */
 
-.venture-goalbuddy h3 { color: var(--cyan-dark); }
-.venture-goalbuddy .venture-meta span,
-.venture-goalbuddy .venture-meta a {
+.venture-keenlee h3 { color: var(--cyan-dark); }
+.venture-keenlee .venture-meta span,
+.venture-keenlee .venture-meta a {
   border-color: rgba(24, 168, 199, 0.32);
   background: var(--cyan-soft);
   color: var(--cyan-dark);
@@ -886,37 +887,31 @@ h3 {
   color: var(--terracotta-dark);
 }
 
-/* Real goalbuddy wordmark, reproduced from the app's own GoalBuddyWordmark
-   component: Baloo 2 ExtraBold, all lowercase, "goal" and "b/uddy" each in
-   their real brand colour, with the flag-on-the-"b" mark from the real
-   app icon -- not a generic heading treatment. Sized to exactly match the
-   plain h3 used by Lilith/OutLoud, not larger, so all four cards carry the
-   same visual weight regardless of which ones have a real logo. */
-.gb-wordmark {
+/* Real keenlee wordmark, reproduced from the app's own KeenleeWordmark
+   component (20 Aug 2026 rebrand, replacing the old flag-on-"b" GoalBuddy
+   mark): Poppins ExtraBold, all lowercase, "keen" and "lee" each in their
+   real brand colour, with the three teal/sage/rose lines from the real app
+   icon leading into the "k" -- not a generic heading treatment. Sized to
+   exactly match the plain h3 used by Lilith/OutLoud, not larger, so all
+   four cards carry the same visual weight regardless of which ones have a
+   real logo. */
+.kl-wordmark {
   display: inline-flex;
   align-items: baseline;
-  font-family: "Baloo 2", var(--display);
+  font-family: "Poppins", var(--display);
   font-weight: 800;
   font-size: clamp(22px, 2.6vw, 34px);
   line-height: 1.05;
 }
 
-.gb-goal { color: #368050; }
-.gb-uddy,
-.gb-b { color: #3e8fb0; }
+.kl-keen { color: #1b3b4b; }
+.kl-lee { color: #12a594; }
 
-.gb-b-wrap {
-  position: relative;
-  display: inline-block;
-}
-
-.gb-flag {
-  position: absolute;
-  left: 0.1em;
-  top: -0.62em;
-  width: 0.46em;
-  height: 0.62em;
-  pointer-events: none;
+.kl-lines {
+  width: 0.5em;
+  height: 0.85em;
+  margin-right: 0.12em;
+  align-self: center;
 }
 
 .waddl-wordmark-img {
