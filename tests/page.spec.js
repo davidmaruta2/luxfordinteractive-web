@@ -14,9 +14,9 @@ test("desktop page renders without console errors", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 1100 });
   await page.goto(siteUrl);
 
-  await expect(page.getByRole("heading", { name: /Apps that move people/ })).toBeVisible();
-  await expect(page.getByRole("heading", { name: "Our ventures, presented honestly." })).toBeVisible();
-  await expect(page.locator("img[alt='keenlee app icon']")).toBeVisible();
+  await expect(page.getByRole("heading", { name: /Premium bespoke applications/ })).toBeVisible();
+  await expect(page.getByRole("heading", { name: /Premium software across every part of the business/ })).toBeVisible();
+  await expect(page.getByText("Practical AI expertise")).toBeVisible();
   expect(errors).toEqual([]);
 });
 
@@ -24,9 +24,9 @@ test("mobile layout keeps key content visible", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto(siteUrl);
 
-  await expect(page.getByRole("navigation").getByRole("link", { name: "Portfolio" })).toBeVisible();
+  await expect(page.getByRole("navigation").getByRole("link", { name: "Services" })).toBeVisible();
   await expect(page.getByRole("link", { name: "admin@luxfordinteractive.com" }).first()).toBeVisible();
-  await expect(page.getByRole("heading", { name: "Waddl" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: /Premium bespoke applications/ })).toBeVisible();
 });
 
 test("reduced motion disables ambient canvas", async ({ page }) => {

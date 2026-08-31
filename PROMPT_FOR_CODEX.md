@@ -86,6 +86,7 @@ WHAT TO DO
 The owner will tell you specifically what to change beyond this point -- treat everything above as
 required background, not a task list. If no further specific instruction is given alongside this
 prompt, do not redesign anything speculatively; ask what specifically they want changed.
+Develop our Ethos so it looks and reads like actual professionally worded company values
 
 TECHNICAL CONSTRAINTS
 
